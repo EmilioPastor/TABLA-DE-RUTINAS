@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Rutina Semanal Profesional</title>
+    <style>
+        :root {
+            --primary-color: #2A5C82;
+            --secondary-color: #3A8BB6;
+            --accent-color: #FF6B6B;
+            --light-bg: #F8FAFC;
+            --text-color: #2D3748;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        .header-info {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        th {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+            text-align: left;
+            position: sticky;
+            top: 0;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #EDF2F7;
+            vertical-align: top;
+        }
+
+        .time-column {
+            width: 160px;
+            font-weight: 500;
+            color: var(--primary-color);
+            background: rgba(42, 92, 130, 0.05);
+        }
+
+        tr:nth-child(even) td:not(.time-column) {
+            background: var(--light-bg);
+        }
+
+        .activity-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.8rem;
+            vertical-align: middle;
+        }
+
+        .estrategias {
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .estrategias h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .estrategias ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .estrategias li {
+            padding: 1.2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .header-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .estrategias ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📅 Planificación Semanal Profesional</h1>
+
+        <div class="header-info">
+            <div class="header-info-item">
+                ⏰ Horario Base
+                <span style="opacity: 0.8">| 9:00 - 00:00</span>
+            </div>
+            <div class="header-info-item">
+                🎯 Objetivos Principales
+                <span style="opacity: 0.8">| Estudios - Desarrollo Web - Carnet</span>
+            </div>
+        </div>
+        <!-- Tabla de Rutina -->
+        <table>
+            <!-- Lunes -->
+            <tr>
+                <th colspan="2">Lunes</th>
+            </tr>
+            <tr>
+                <td class="time-column">09:00 - 09:30</td>
+                <td>🍳 Desayuno saludable (avena con fruta o huevos)</td>
+            </tr>
+            <tr>
+                <td class="time-column">09:30 - 10:30</td>
+                <td>🏋️ Gimnasio (piernas y espalda)</td>
+            </tr>
+            <tr>
+                <td class="time-column">10:30 - 11:00</td>
+                <td>🚿 Ducha y planificación del día</td>
+            </tr>
+            <tr>
+                <td class="time-column">11:00 - 13:00</td>
+                <td>📚 Estudio académico (asignatura urgente)</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:00 - 13:30</td>
+                <td>🚭 Técnica para dejar de fumar + Agua</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:30 - 14:30</td>
+                <td>💻 Desarrollo web (WordPress/HTML/CSS)</td>
+            </tr>
+            <tr>
+                <td class="time-column">14:30 - 15:30</td>
+                <td>🥗 Almuerzo (proteínas + verduras)</td>
+            </tr>
+            <tr>
+                <td class="time-column">15:30 - 17:00</td>
+                <td>🚗 Teoría carnet (TestVial)</td>
+            </tr>
+            <tr>
+                <td class="time-column">17:00 - 18:30</td>
+                <td>🎧 Tiempo libre</td>
+            </tr>
+            <tr>
+                <td class="time-column">18:30 - 19:30</td>
+                <td>🧘 Ejercicio ligero (yoga/estiramientos)</td>
+            </tr>
+            <tr>
+                <td class="time-column">19:30 - 21:00</td>
+                <td>💼 Buscar clientes (Fiverr)</td>
+            </tr>
+            <tr>
+                <td class="time-column">21:00 - 21:30</td>
+                <td>🥙 Cena ligera (ensalada con pollo)</td>
+            </tr>
+            <tr>
+                <td class="time-column">21:30 - 23:30</td>
+                <td>🎮 Ocio</td>
+            </tr>
+            <tr>
+                <td class="time-column">23:30 - 00:00</td>
+                <td>📔 Reflexión del día</td>
+            </tr>
+
+            <!-- Martes -->
+            <tr>
+                <th colspan="2">Martes</th>
+            </tr>
+            <tr>
+                <td class="time-column">09:00 - 09:30</td>
+                <td>🥤 Batido de proteínas</td>
+            </tr>
+            <tr>
+                <td class="time-column">09:30 - 10:30</td>
+                <td>🎾 Pádel (cardio intenso)</td>
+            </tr>
+            <tr>
+                <td class="time-column">10:30 - 11:00</td>
+                <td>🚿 Ducha y organización</td>
+            </tr>
+            <tr>
+                <td class="time-column">11:00 - 13:00</td>
+                <td>📚 Clases/Estudio</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:00 - 13:30</td>
+                <td>🌬️ Técnica antitabaco (respiración)</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:30 - 14:30</td>
+                <td>💻 Portfolio web</td>
+            </tr>
+            <tr>
+                <td class="time-column">14:30 - 15:30</td>
+                <td>🥗 Almuerzo</td>
+            </tr>
+            <tr>
+                <td class="time-column">15:30 - 17:00</td>
+                <td>🚗 Simulacros de examen</td>
+            </tr>
+            <tr>
+                <td class="time-column">17:00 - 19:00</td>
+                <td>📚 Clases</td>
+            </tr>
+            <tr>
+                <td class="time-column">19:00 - 20:00</td>
+                <td>🚴♀️ Gimnasio (cardio)</td>
+            </tr>
+            <tr>
+                <td class="time-column">20:00 - 21:00</td>
+                <td>🍲 Cena (sopa de verduras)</td>
+            </tr>
+            <tr>
+                <td class="time-column">21:00 - 22:30</td>
+                <td>💻 JavaScript</td>
+            </tr>
+            <tr>
+                <td class="time-column">22:30 - 00:00</td>
+                <td>🛌 Preparación para dormir</td>
+            </tr>
+
+            <!-- Miércoles -->
+            <tr>
+                <th colspan="2">Miércoles</th>
+            </tr>
+            <tr>
+                <td class="time-column">09:00 - 09:30</td>
+                <td>🍞 Tostadas integrales con hummus</td>
+            </tr>
+            <tr>
+                <td class="time-column">09:30 - 10:30</td>
+                <td>🏋️ Gimnasio (pecho y brazos)</td>
+            </tr>
+            <tr>
+                <td class="time-column">10:30 - 11:00</td>
+                <td>🚿 Ducha</td>
+            </tr>
+            <tr>
+                <td class="time-column">11:00 - 13:00</td>
+                <td>📚 Ejercicios prácticos</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:00 - 13:30</td>
+                <td>🍋 Agua con limón</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:30 - 15:00</td>
+                <td>💻 Mejorar proyectos web</td>
+            </tr>
+            <tr>
+                <td class="time-column">15:00 - 16:00</td>
+                <td>🥗 Almuerzo</td>
+            </tr>
+            <tr>
+                <td class="time-column">16:00 - 17:30</td>
+                <td>🚗 Práctica de manejo</td>
+            </tr>
+            <tr>
+                <td class="time-column">17:30 - 19:00</td>
+                <td>👥 Socializar</td>
+            </tr>
+            <tr>
+                <td class="time-column">19:00 - 20:30</td>
+                <td>📚 Repaso académico</td>
+            </tr>
+            <tr>
+                <td class="time-column">20:30 - 21:00</td>
+                <td>🐟 Cena (pescado al horno)</td>
+            </tr>
+            <tr>
+                <td class="time-column">21:00 - 23:00</td>
+                <td>📊 Evaluación semanal</td>
+            </tr>
+
+            <!-- Jueves -->
+            <tr>
+                <th colspan="2">Jueves</th>
+            </tr>
+            <tr>
+                <td class="time-column">09:00 - 09:30</td>
+                <td>🥣 Yogur griego con granola</td>
+            </tr>
+            <tr>
+                <td class="time-column">09:30 - 10:30</td>
+                <td>🎾 Pádel con amigo</td>
+            </tr>
+            <tr>
+                <td class="time-column">10:30 - 11:00</td>
+                <td>🚿 Ducha</td>
+            </tr>
+            <tr>
+                <td class="time-column">11:00 - 13:00</td>
+                <td>📚 Clases/Estudio</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:00 - 13:30</td>
+                <td>🍵 Infusión relajante</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:30 - 15:00</td>
+                <td>💻 Investigar nichos web</td>
+            </tr>
+            <tr>
+                <td class="time-column">15:00 - 16:00</td>
+                <td>🥗 Almuerzo</td>
+            </tr>
+            <tr>
+                <td class="time-column">16:00 - 18:00</td>
+                <td>📚 Clases</td>
+            </tr>
+            <tr>
+                <td class="time-column">18:00 - 19:00</td>
+                <td>🏋️ Gimnasio (entrenamiento funcional)</td>
+            </tr>
+            <tr>
+                <td class="time-column">19:00 - 20:00</td>
+                <td>🌯 Cena (wrap de pavo y vegetales)</td>
+            </tr>
+            <tr>
+                <td class="time-column">20:00 - 22:00</td>
+                <td>📚 Estudio teórico del carnet (señales de tráfico)</td>
+            </tr>
+            <tr>
+                <td class="time-column">22:00 - 00:00</td>
+                <td>🛌 Ocio + preparación para dormir</td>
+            </tr>
+
+            <!-- Viernes -->
+            <tr>
+                <th colspan="2">Viernes</th>
+            </tr>
+            <tr>
+                <td class="time-column">09:00 - 09:30</td>
+                <td>🥬 Smoothie verde con espinacas</td>
+            </tr>
+            <tr>
+                <td class="time-column">09:30 - 10:30</td>
+                <td>🏋️ Gimnasio (circuito HIIT)</td>
+            </tr>
+            <tr>
+                <td class="time-column">10:30 - 11:00</td>
+                <td>🚿 Ducha</td>
+            </tr>
+            <tr>
+                <td class="time-column">11:00 - 13:00</td>
+                <td>💻 Contactar clientes potenciales</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:00 - 13:30</td>
+                <td>🍏 Snack saludable (fruta o frutos secos)</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:30 - 15:00</td>
+                <td>📚 Estudio académico (tareas pendientes)</td>
+            </tr>
+            <tr>
+                <td class="time-column">15:00 - 16:00</td>
+                <td>🥗 Almuerzo</td>
+            </tr>
+            <tr>
+                <td class="time-column">16:00 - 17:30</td>
+                <td>🚗 Práctica de manejo o estudio teórico</td>
+            </tr>
+            <tr>
+                <td class="time-column">17:30 - 19:00</td>
+                <td>🌳 Actividad al aire libre</td>
+            </tr>
+            <tr>
+                <td class="time-column">19:00 - 20:30</td>
+                <td>💻 Optimizar página personal</td>
+            </tr>
+            <tr>
+                <td class="time-column">20:30 - 21:00</td>
+                <td>🥗 Cena (ensalada de garbanzos y atún)</td>
+            </tr>
+            <tr>
+                <td class="time-column">21:00 - 23:00</td>
+                <td>📅 Planificación de la próxima semana</td>
+            </tr>
+
+            <!-- Sábado -->
+            <tr>
+                <th colspan="2">Sábado</th>
+            </tr>
+            <tr>
+                <td class="time-column">09:00 - 09:30</td>
+                <td>🍳 Tortilla de claras con champiñones</td>
+            </tr>
+            <tr>
+                <td class="time-column">09:30 - 10:30</td>
+                <td>🎾 Pádel (liberar estrés)</td>
+            </tr>
+            <tr>
+                <td class="time-column">10:30 - 11:00</td>
+                <td>🚿 Ducha</td>
+            </tr>
+            <tr>
+                <td class="time-column">11:00 - 13:00</td>
+                <td>💻 Proyecto personal (blog o tienda online)</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:00 - 13:30</td>
+                <td>🚭 Técnica antitabaco (chicles sin nicotina)</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:30 - 15:00</td>
+                <td>🥗 Almuerzo + tiempo libre</td>
+            </tr>
+            <tr>
+                <td class="time-column">15:00 - 17:00</td>
+                <td>📚 Estudio teórico del carnet (repaso intensivo)</td>
+            </tr>
+            <tr>
+                <td class="time-column">17:00 - 19:00</td>
+                <td>💰 Actividad para generar ingresos</td>
+            </tr>
+            <tr>
+                <td class="time-column">19:00 - 20:00</td>
+                <td>🍛 Cena (pollo al curry con arroz integral)</td>
+            </tr>
+            <tr>
+                <td class="time-column">20:00 - 22:00</td>
+                <td>🎉 Ocio (socializar, cine, etc.)</td>
+            </tr>
+
+            <!-- Domingo -->
+            <tr>
+                <th colspan="2">Domingo</th>
+            </tr>
+            <tr>
+                <td class="time-column">09:00 - 09:30</td>
+                <td>🥑 Pan integral con aguacate y huevo</td>
+            </tr>
+            <tr>
+                <td class="time-column">09:30 - 10:30</td>
+                <td>🧘 Yoga o estiramientos (recuperación muscular)</td>
+            </tr>
+            <tr>
+                <td class="time-column">10:30 - 11:00</td>
+                <td>🚿 Ducha</td>
+            </tr>
+            <tr>
+                <td class="time-column">11:00 - 13:00</td>
+                <td>📚 Estudio académico (repaso general)</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:00 - 13:30</td>
+                <td>📝 Reflexión semanal (logros y metas)</td>
+            </tr>
+            <tr>
+                <td class="time-column">13:30 - 15:00</td>
+                <td>🥗 Almuerzo + tiempo libre</td>
+            </tr>
+            <tr>
+                <td class="time-column">15:00 - 17:00</td>
+                <td>💻 Desarrollo web (automatizar tareas)</td>
+            </tr>
+            <tr>
+                <td class="time-column">17:00 - 19:00</td>
+                <td>👨‍👩‍👧‍👦 Tiempo libre (paseo, familia)</td>
+            </tr>
+            <tr>
+                <td class="time-column">19:00 - 20:00</td>
+                <td>🐟 Cena (salmón a la plancha con brócoli)</td>
+            </tr>
+            <tr>
+                <td class="time-column">20:00 - 22:00</td>
+                <td>📅 Planificación detallada de la próxima semana</td>
+            </tr>
+        </table>
+
+        <!-- Estrategias Clave -->
+        <div class="estrategias">
+            <h3>🚀 Estrategias Clave</h3>
+            <ul>
+                <li>
+                    <span style="font-size: 1.4em">🚭</span>
+                    <div>
+                        <strong>Dejar de fumar:</strong><br>
+                        Uso diario de <span class="highlight">Smoke Free</span> + Técnicas de respiración
+                    </div>
+                </li>
+                <li>
+                    <span style="font-size: 1.4em">💻</span>
+                    <div>
+                        <strong>Desarrollo Web:</strong><br>
+                        Mínimo 1.5h diarias en proyectos reales
+                    </div>
+                </li>
+                <li>
+                    <span style="font-size: 1.4em">🚗</span>
+                    <div>
+                        <strong>Carnet de Conducir:</strong><br>
+                        5h semanales teoría + Prácticas programadas
+                    </div>
+                </li>
+                <li>
+                    <span style="font-size: 1.4em">🏋️</span>
+                    <div>
+                        <strong>Fitness:</strong><br>
+                        3 días fuerza + 2 días cardio semanales
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
